@@ -3,20 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagina de login</title>
+    <link rel="stylesheet" href="master.css">
 </head>
     
 <body>
     <main>
-        <H1>Faça seu loguin</H1>
+        <H1>Login</H1>
 
+        <div class="social-media">
+            <a href="#">
+                <img src="assets/google.png" alt="google">
+            </a>
+
+            <a href="#">
+                <img src="assets/facebook.png" alt="facebook">
+            </a>
+
+            <a href="#">
+                <img src="assets/linkedin.png" alt="linkedin">
+            </a>
+        </div>
+
+        <div class="alternative">
+            <span>OU</span>
+        </div>    
+
+    <form action="processar_login.php" method="post">
+        
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
-        <p></p>
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required />
-
         
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha"pattern=".{5,}" title="A senha deve ter pelo menos 5 caracteres!" required>
+        
+        <label for="confirmarsenha">confirmar Senha</label>
+        <input type="password" id="confirmarsenha" name="confirmarsenha" pattern=".{5,}" title="A senha deve ter pelo menos 5 caracteres!" required>
+
+
+        <button type="button" onclick="redirecionarParaLogin()">Login</button>
     
+
+    <section class="images">
+        <div class="circle"></div> 
+    
+        <script>
+           
+            function redirecionarParaLogin() {
+                window.location.href = 'teladojogo.html';
+            }
+        </script>
+        
+    </form>
+    </main>
+ 
 </body>
 </html>

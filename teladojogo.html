@@ -3,25 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tela do jogo</title>
+    <title>Tela do Jogo</title>
+    <link rel="stylesheet" href="jogo.css">
 </head>
 <body>
-    <label for="classes"> <h1>Escolha uma das cinco classes:</h1></label>
-    <select id="classes" name="classes"
-
-    <option value="classe1">Guerreiro</option>
-    <option value="classe1">Guerreiro [Espada e Escudo]
-    </option>
-    <option value="classe2">Arqueiro [Arco]</option>
-    <option value="classe3">Atirador [Arma]</option>
-    <option value="classe4">Bárbaro [Machado ou Marreta]
-    </option>
-    <option value="classe5">Paladino [lança e escudo]</option>
-    </select>
-   <p></p>
+    <main>
+        <h1>Escolha o seu personagem [:</h1>
     
+        <div class="personagens">
+            <div class="personagem" onclick="selecionarPersonagem('guerreiro')">
+                <img src="assets/guerreiro.jpg" alt="Guerreiro">
+                <p>Guerreiro</p>
+                <p>Arma: Espada e escudo.
+                    atributos: vida:95 mana:15 ataque:55
+                </p>
+            </div>
 
-    <label for="Caracteristicas">Escolha suas caracteristicas fisicas como cabelo, cor de pele, e algo a mais que queira acrescentar:</label>
-    <input type="text" id="caracteristicas" name="caracteristicas">
+            <div class="personagem" onclick="selecionarPersonagem('Arqueiro')">
+                <img src="assets/arqueiro.jpg" alt="Arqueiro">
+                <p>Arqueiro</p>
+                <p>Arma: Arco.
+                    atributos: vida:50 mana:25 ataque:75
+                </p>
+            </div>
+
+            <div class="personagem" onclick="selecionarPersonagem('Paladino')">
+                <img src="assets/paladino.jpg"Paladino">
+                <p>Paladino</p>
+                <p>Arma: Lança e escudo.
+                    atributos: vida:90 mana:20 ataque:50
+                </p>
+            </div>
+
+            <div class="personagem" onclick="selecionarPersonagem('Bárbaro')">
+                <img src="assets/Bárbaro.jpg" alt="Bárbaro">
+                <p>Bárbaro</p>
+                <p>Arma: Machado e marreta.
+                    atributos: vida:75 mana:0 ataque:90
+                </p>
+            </div>
+
+            <div class="personagem" onclick="selecionarPersonagem('Atirador')">
+                <img src="assets/atirador.jpg" alt="Atirador">
+                <p>Atirador</p>
+                <p>Arma: Sniper.
+                    atributos: vida:70 mana:40 ataque:45
+                </p>
+            </div>
+        </div>
+
+        <div class="personalizacao">
+            <h2>Personalize Seu Personagem</h2>
+            <textarea id="caracteristicas" placeholder="Adicione suas características aqui"></textarea>
+        </div>
+
+        <input type="submit" value="criar personagem">
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+        function selecionarPersonagem(personagem, element) {
+           
+            var personagens = document.querySelectorAll('.personagem');
+            personagens.forEach(function (el) {
+                el.classList.remove('selecionado');
+            });
+
+            
+            element.classList.add('selecionado');
+
+           
+            console.log('Personagem selecionado:', personagem);
+
+            var informacoesElement = document.getElementById('informacoes-personagem');
+            informacoesElement.innerHTML = element.innerHTML;
+        }
+        
+    </script>
+
+
+
 </body>
 </html>

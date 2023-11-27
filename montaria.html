@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaria</title>
+    <link rel="stylesheet" href="montaria.css">
+</head>
+<body>
+    <main>
+        <h1>Escolha sua montaria [:</h1>
+    
+        <div class="montarias">
+            <div class="montaria" onclick="selecionarMontaria('cavalo')">
+                <img src="assets/cavalo.jpg" alt="cavalo">
+                <p>Cavalo</p>
+                <p>Arma: Espada e escudo</p>
+            </div>
+
+            <div class="montaria" onclick="selecionarMontaria('panda')">
+                <img src="assets/panda.jpg" alt="panda">
+                <p>Panda</p>
+                <p>Arma: Arco</p>
+            </div>
+
+            <div class="montaria" onclick="selecionarMontaria('burro')">
+                <img src="assets/burro.jpg" alt="burro">
+                <p>burro</p>
+                <p>Arma: Lança e escudo</p>
+            </div>
+
+            <div class="montaria" onclick="selecionarMontaria('dragao')">
+                <img src="assets/dragao.jpg" alt="dragao">
+                <p>dragão</p>
+                <p>Arma: Machado ou marreta</p>
+            </div>
+
+            <div class="montaria" onclick="selecionarMontaria('elefante')">
+                <img src="assets/elefante.jpg" alt="elefante">
+                <p>elefante</p>
+                <p>Arma: Sniper</p>
+            </div>
+        </div>
+
+        <input type="submit" value="criar personagem">
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+        function selecionarPersonagem(montaria, element) {
+          
+            var montarias = document.querySelectorAll('.montaria');
+            montarias.forEach(function (el) {
+                el.classList.remove('selecionado');
+            });
+
+            
+            element.classList.add('selecionado');
+
+           
+            console.log('montaria selecionado:', montaria);
+        }
+    </script>
+
+
+
+</body>
+</html>
